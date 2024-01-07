@@ -1,13 +1,20 @@
 import React from "react";
+//Import Components
+import Tweet from "./Tweet";
 
-const Tweets = (props) => (
-  <section>
-    <h1>{props.me}</h1>
-    <h2>{props.age}</h2>
-    <p>tweet tweet</p>
-    <p>tweet tweet</p>
-    <p>tweet tweet</p>
-  </section>
-);
+const Tweets = (props) => {
+  const tweets = [
+    { name: "Parker-", tweet: "This is a tweet" },
+    { name: "David-", tweet: "This is a tweet" },
+    { name: "John-", tweet: "This is a tweet" },
+  ];
+  return (
+    <section>
+      {tweets.map((tweet) => (
+        <Tweet name={tweet.name} tweet={tweet.tweet} />
+      ))}
+    </section>
+  );
+};
 
 export default Tweets;
